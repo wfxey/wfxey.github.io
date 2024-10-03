@@ -3,55 +3,81 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>wfxey</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="wfxey" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://wfxey.github.io/" />
-<meta property="og:url" content="https://wfxey.github.io/" />
-<meta property="og:site_name" content="wfxey" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="wfxey" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"wfxey","name":"wfxey","url":"https://wfxey.github.io/"}</script>
-<!-- End Jekyll SEO tag -->
+    <title>wfxey - test Page</title>
+    <meta name="description" content="This is a test page for trying GitHub Pages.">
+    <meta name="author" content="wfxey">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="wfxey">
+    <meta property="og:description" content="This is a test page for trying GitHub Pages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wfxey.github.io/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/158351052?v=4">
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=2a6354d084513532ca7a3a307f13e7efe131d6eb">
-    <!-- Custom CSS for fancy design -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="wfxey - Test Page">
+    <meta name="twitter:description" content="This is a test page for trying GitHub Pages.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/12345678?v=4">
+
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/158351052?v=4" type="image/x-icon">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "wfxey",
+      "url": "https://wfxey.github.io/",
+      "description": "This is a test page for trying GitHub Pages."
+    }
+    </script>
+
+    <link rel="canonical" href="https://wfxey.github.io/">
+
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
       body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f0f4f8;
+        font-family: 'Poppins', sans-serif;
         color: #333;
         margin: 0;
         padding: 0;
+        transition: background-color 0.3s ease-in-out;
       }
 
       .container-lg {
         max-width: 800px;
-        margin: auto;
+        margin: 50px auto;
         background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease;
       }
 
       h1 {
-        font-size: 3em;
+        font-size: 3.5em;
         text-align: center;
         color: #2c3e50;
         margin-bottom: 20px;
         font-family: 'Georgia', serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
       p {
-        font-size: 1.5em;
+        font-size: 1.2em;
         text-align: center;
         color: #34495e;
+        margin-bottom: 10px;
+      }
+
+      .subtext {
+        font-size: 0.9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-bottom: 40px;
       }
 
       a {
@@ -59,50 +85,80 @@
         text-decoration: none;
       }
 
-      a:hover {
-        text-decoration: underline;
-      }
-
-      /* Add hover effect on the whole container */
       .container-lg:hover {
-        background-color: #ecf0f1;
-        transition: background-color 0.3s ease;
+        transform: translateY(-10px);
+        background-color: #f9f9f9;
       }
 
-      /* Custom button style */
       .button {
         display: inline-block;
-        padding: 10px 20px;
-        font-size: 1.2em;
+        padding: 12px 30px;
+        font-size: 1.1em;
         color: white;
         background-color: #3498db;
-        border-radius: 25px;
+        border-radius: 30px;
         text-align: center;
-        margin-top: 20px;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
       }
 
       .button:hover {
         background-color: #2980b9;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
       }
 
       .button-container {
         text-align: center;
       }
+
+      h1 {
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+      }
+
+      p {
+        opacity: 0;
+        animation: fadeInUp 1.2s ease forwards;
+      }
+
+      .subtext {
+        opacity: 0;
+        animation: fadeInUp 1.3s ease forwards;
+      }
+
+      .button-container {
+        opacity: 0;
+        animation: fadeInUp 1.4s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
-    <!-- end custom head snippets -->
 
   </head>
+
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       <h1 id="wfxey">wfxey</h1>
       <p>Im wfxey :D</p>
+      <p class="subtext">This is a test page for trying GitHub Pages.</p>
 
       <div class="button-container">
-        <a href="#" class="button">Explore More</a>
+        <a href="https://github.com/wfxey" class="button">GitHub</a>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
   </body>
 </html>
