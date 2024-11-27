@@ -1,164 +1,252 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="wfxey">
+  <title>@wfxey - Developer Portfolio</title>
 
-    <title>wfxey - GitHub Page</title>
-    <meta name="description" content="This is a test page for trying GitHub Pages.">
-    <meta name="author" content="wfxey">
-    <meta name="robots" content="index, follow">
-    
-    <meta property="og:title" content="wfxey">
-    <meta property="og:description" content="This is a test page for trying GitHub Pages.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wfxey.github.io/">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/158351052?v=4">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="wfxey - Test Page">
-    <meta name="twitter:description" content="This is a test page for trying GitHub Pages.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/12345678?v=4">
-
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/158351052?v=4" type="image/x-icon">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "wfxey",
-      "url": "https://wfxey.github.io/",
-      "description": "This is a test page for trying GitHub Pages."
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 14px;
     }
-    </script>
 
-    <link rel="canonical" href="https://wfxey.github.io/">
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-      body {
-        font-family: 'Poppins', sans-serif;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        transition: background-color 0.3s ease-in-out;
-      }
+    .header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #2c3e50;
+    }
 
-      .container-lg {
-        max-width: 800px;
-        margin: 50px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, background-color 0.3s ease;
-      }
+    .header p {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      margin: 5px 0 15px;
+    }
 
-      h1 {
-        font-size: 3.5em;
-        text-align: center;
-        color: #2c3e50;
-        margin-bottom: 20px;
-        font-family: 'Georgia', serif;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
 
-      p {
-        font-size: 1.2em;
-        text-align: center;
-        color: #34495e;
-        margin-bottom: 10px;
-      }
+    .badge {
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
 
-      .subtext {
-        font-size: 0.9em;
-        color: #7f8c8d;
-        text-align: center;
-        margin-bottom: 40px;
-      }
+    .badge-blue { background: #3498db; }
+    .badge-gray { background: #95a5a6; }
 
-      a {
-        color: #3498db;
-        text-decoration: none;
-      }
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 13px;
+    }
 
-      .container-lg:hover {
-        transform: translateY(-10px);
-        background-color: #f9f9f9;
-      }
+    table th, table td {
+      text-align: left;
+      padding: 10px;
+    }
 
-      .button {
-        display: inline-block;
-        padding: 12px 30px;
-        font-size: 1.1em;
-        color: white;
-        background-color: #3498db;
-        border-radius: 30px;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-      }
+    table th {
+      background-color: #f3f4f6;
+      color: #2c3e50;
+      font-weight: 600;
+    }
 
-      .button:hover {
-        background-color: #2980b9;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
-      }
+    table td {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ebebeb;
+    }
 
-      .button-container {
-        text-align: center;
-      }
+    table a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-      h1 {
-        opacity: 0;
-        animation: fadeInUp 1s ease forwards;
-      }
+    /* Chart Container */
+    .chart-container {
+      margin: 20px auto;
+      max-width: 360px;
+      text-align: center;
+    }
 
-      p {
-        opacity: 0;
-        animation: fadeInUp 1.2s ease forwards;
-      }
+    .chart-container h2 {
+      font-size: 1rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
 
-      .subtext {
-        opacity: 0;
-        animation: fadeInUp 1.3s ease forwards;
-      }
-
-      .button-container {
-        opacity: 0;
-        animation: fadeInUp 1.4s ease forwards;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          transform: translateY(10px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-
-  </head>
-
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      <h1 id="wfxey">wfxey</h1>
-      <p>Im wfxey :D</p>
-      <p class="subtext">This is a test page for trying GitHub Pages.</p>
-
-      <div class="button-container">
-        <a href="https://github.com/wfxey" class="button">GitHub</a>
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #95a5a6;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>@wfxey</h1>
+      <p><em>Exploring code, building solutions, and contributing to the developer community.</em></p>
+      <div class="badges">
+        <a href="https://github.com/wfxey" class="badge badge-blue">GitHub Profile</a>
+        <a href="https://discord.gg/rfrMnA4XCc" class="badge badge-gray">Discord</a>
       </div>
     </div>
-  </body>
+
+    <!-- GitHub Projects -->
+    <h2>📂 GitHub Projects</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>License</th>
+      <th>Language</th>
+      <th>Contributors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/D-I-Projects/Discord-Bot">Discord Bot (D&I)</a></td>
+      <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+      <td><img src="https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=fff" alt="Python"></td>
+      <td><img src="https://img.shields.io/github/contributors-anon/D-I-Projects/Discord-Bot" alt="Contributors"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/D-I-Projects/Destor">Destor (D&I)</a></td>
+      <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+      <td><img src="https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=fff" alt="Python"></td>
+      <td><img src="https://img.shields.io/github/contributors-anon/D-I-Projects/Destor" alt="Contributors"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Eldritchy/diec-test-gui">diec-test-gui (D&I)</a></td>
+      <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+      <td><img src="https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=fff" alt="Python"></td>
+      <td><img src="https://img.shields.io/github/contributors-anon/Eldritchy/diec-test-gui" alt="Contributors"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/wfxey/Keylogger">Keylogger</a></td>
+      <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+      <td><img src="https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=fff" alt="Python"></td>
+      <td><img src="https://img.shields.io/github/contributors-anon/wfxey/Keylogger" alt="Contributors"></td>
+    </tr>
+  </tbody>
+</table>
+
+  <h2>📦 PyPi Packages</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>License</th>
+        <th>PyPi</th>
+        <th>Downloads</th>
+        <th>Install Command</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/wfxey/binaryconvert">binaryconvert</a></td>
+        <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+        <td><a href="https://pypi.org/project/binaryconvert/"><img src="https://img.shields.io/badge/PyPi%20Link-FFFF00" alt="PyPi Link"></a></td>
+        <td><img src="https://static.pepy.tech/badge/binaryconvert" alt="Downloads"></td>
+        <td><code>pip install binaryconvert</code></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/D-I-Projects/diec">diec</a></td>
+        <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+        <td><a href="https://pypi.org/project/diec/"><img src="https://img.shields.io/badge/PyPi%20Link-FFFF00" alt="PyPi Link"></a></td>
+        <td><img src="https://static.pepy.tech/badge/diec" alt="Downloads"></td>
+        <td><code>pip install diec</code></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/Eldritchy/BetterTkinter">BetterTkinter</a></td>
+        <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+        <td><a href="https://pypi.org/project/BetterTkinter/"><img src="https://img.shields.io/badge/PyPi%20Link-FFFF00" alt="PyPi Link"></a></td>
+        <td><img src="https://static.pepy.tech/badge/bettertkinter" alt="Downloads"></td>
+        <td><code>pip install BetterTkinter</code></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/Eldritchy/InsightLog">InsightLog</a></td>
+        <td><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></td>
+        <td><a href="https://pypi.org/project/InsightLog/"><img src="https://img.shields.io/badge/PyPi%20Link-FFFF00" alt="PyPi Link"></a></td>
+        <td><img src="https://static.pepy.tech/badge/InsightLog" alt="Downloads"></td>
+        <td><code>pip install InsightLog</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+    <div class="chart-container">
+      <h2>📊 Repository Distribution</h2>
+      <canvas id="repoChart"></canvas>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤ and open-source tools. (Test Page)
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('repoChart').getContext('2d');
+    const repoChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Forks', 'Own', 'Eldritchy', 'D&I Projects'],
+        datasets: [{
+          data: [4, 15, 9, 19],
+          backgroundColor: ['#9999', '#3498db', '#2ecc71', '#f1c40f'],
+          hoverOffset: 5,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              font: {
+                size: 12,
+              },
+              color: '#7f8c8d',
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
 </html>
